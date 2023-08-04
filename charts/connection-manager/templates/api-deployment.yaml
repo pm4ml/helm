@@ -35,8 +35,16 @@ spec:
               value: {{ .Values.db.host }}
             - name: DATABASE_USER
               value: {{ .Values.db.user }}
+            {{- if .Values.db.passwordSecret }}
+            - name: DATABASE_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: {{ .Values.db.passwordSecret }}
+                  key: {{ .Values.db.passwordSecretKey }}
+            {{- else }}
             - name: DATABASE_PASSWORD
               value: {{ .Values.db.password }}
+            {{- end }}
             - name: DATABASE_SCHEMA
               value: {{ .Values.db.schema }}
             - name: DATABASE_PORT
@@ -49,8 +57,16 @@ spec:
               value: {{ .Values.api.oauth.issuer }}
             - name: APP_OAUTH_CLIENT_KEY
               value: {{ .Values.api.oauth.key }}
+            {{- if .Values.api.oauth.clientSecretSecret }}
+            - name: APP_OAUTH_CLIENT_SECRET
+              valueFrom:
+                secretKeyRef:
+                  name: {{ .Values.api.oauth.clientSecretSecret }}
+                  key: {{ .Values.api.oauth.clientSecretSecretKey }}
+            {{- else }}
             - name: APP_OAUTH_CLIENT_SECRET
               value: {{ .Values.api.oauth.secret }}
+            {{- end }}
             - name: AUTH_2FA_ENABLED
               value: {{ .Values.api.auth2fa.enabled | quote }}
             - name: TOTP_ADMIN_ISSUER
