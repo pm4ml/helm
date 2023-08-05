@@ -36,8 +36,16 @@ spec:
           value: {{ .Values.db.host }}
         - name: DATABASE_USER
           value: {{ .Values.db.user }}
+        {{- if .Values.db.passwordSecret }}
+        - name: DATABASE_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: {{ .Values.db.passwordSecret }}
+              key: {{ .Values.db.passwordSecretKey }}
+        {{- else }}
         - name: DATABASE_PASSWORD
           value: {{ .Values.db.password }}
+        {{- end }}
         - name: DATABASE_SCHEMA
           value: {{ .Values.db.schema }}
         - name: DATABASE_PORT
