@@ -15,6 +15,10 @@ spec:
       app.kubernetes.io/instance: {{ .Release.Name }}
   template:
     metadata:
+{{- with .Values.api.annotations }}
+      annotations:
+{{- toYaml . | nindent 8 }}
+{{- end }}
       labels: *labels
     spec:
       {{- if .Values.api.serviceAccount.serviceAccountNameOverride }}

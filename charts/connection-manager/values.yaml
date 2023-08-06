@@ -78,7 +78,7 @@ api:
     serviceAccountNameOverride: null
   rbac:
     enabled: true
-
+  annotations: {}
 ui:
   disabled: false
   image:
@@ -170,10 +170,10 @@ tests:
     enabled: true
     weight: -5
     deletePolicy: before-hook-creation
-    script: 'https://raw.githubusercontent.com/modusbox/connection-manager-api/{{ .Values.api.image.version }}/scripts/run-functional-tests.sh'
+    script: "https://raw.githubusercontent.com/modusbox/connection-manager-api/{{ .Values.api.image.version }}/scripts/run-functional-tests.sh"
     git:
       url: https://github.com/modusbox/connection-manager-api.git
-      tag: '{{ .Values.api.image.version }}'
+      tag: "{{ .Values.api.image.version }}"
     targetDirectory: /tmp/tests
     nvm:
       version: v0.39.1
