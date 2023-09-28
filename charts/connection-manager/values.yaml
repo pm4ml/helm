@@ -79,16 +79,20 @@ api:
   rbac:
     enabled: true
   annotations: {}
+
 ui:
   disabled: false
   image:
-    name: ghcr.io/modusbox/connection-manager-ui
-    version: 1.6.17
+    name: ghcr.io/pm4ml/connection-manager-ui
+    version: 2.0.0-snapshot.1
   ports:
     containerPort: 8080
     nodePort: 31627
   oauth:
     enabled: "FALSE"
+    keycloakOidcUrl: "https://keycloak.test.labsk8s80.mojaloop.live/realms/dfsps/protocol/openid-connect"
+    clientId: mcm-portal
+    clientSecret: changeme
 
 migrations:
   enabled: true
