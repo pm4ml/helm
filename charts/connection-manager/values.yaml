@@ -91,8 +91,6 @@ ui:
   oauth:
     enabled: "FALSE"
     keycloakOidcUrl: "https://keycloak.test.labsk8s80.mojaloop.live/realms/dfsps/protocol/openid-connect"
-    uiLoginRedirectRoute: "auth"
-    oidcTokeRoute: "token"
     clientId: mcm-portal
     clientSecret: GMfNQTpKPImhXw1cAFm5wkcHUOjPubLY
 
