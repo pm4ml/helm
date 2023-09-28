@@ -33,7 +33,14 @@ spec:
             - name: MCM_CLIENT_ID
               value: {{ .clientId | quote }}
             - name: MCM_CLIENT_SECRET
-              value: {{ .clientSecret | quote }}
+              {{- if .clientSecretName }}
+              valueFrom:
+                secretKeyRef:
+                  name: {{ .clientSecretName }}
+                  key: {{ .clientSecretKey }}
+              {{- else }}
+              value: {{ .clientSecret }}
+              {{- end }}
             {{- end }}
           {{- with .Values.ui }}
           image: "{{ .image.name }}:{{ .image.version }}"

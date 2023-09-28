@@ -92,7 +92,7 @@ ui:
     enabled: "FALSE"
     keycloakOidcUrl: "https://keycloak.test.labsk8s80.mojaloop.live/realms/dfsps/protocol/openid-connect"
     clientId: mcm-portal
-    clientSecret: GMfNQTpKPImhXw1cAFm5wkcHUOjPubLY
+    clientSecret: changeme
 
 migrations:
   enabled: true
