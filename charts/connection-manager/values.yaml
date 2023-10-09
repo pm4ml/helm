@@ -84,15 +84,17 @@ ui:
   disabled: false
   image:
     name: ghcr.io/pm4ml/connection-manager-ui
-    version: 2.0.0-snapshot.1
+    version: 2.0.0
   ports:
     containerPort: 8080
     nodePort: 31627
   oauth:
-    enabled: "FALSE"
-    keycloakOidcUrl: "https://keycloak.test.labsk8s80.mojaloop.live/realms/dfsps/protocol/openid-connect"
+    enabled: false
+    hubOidcProviderUrl: https://changeme
     clientId: mcm-portal
     clientSecret: changeme
+#    clientSecretName: changeme
+#    clientSecretKey: changeme
 
 migrations:
   enabled: true

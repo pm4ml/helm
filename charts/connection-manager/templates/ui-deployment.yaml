@@ -27,9 +27,9 @@ spec:
             - name: AUTH_ENABLED
               value: {{ .enabled | quote }}
             - name: UI_OIDC_LOGIN_REDIRECT_URL
-              value: "{{ .keycloakOidcUrl }}/auth"
+              value: "{{ .hubOidcProviderUrl }}/auth"
             - name: OIDC_TOKEN_PROVIDER_URL
-              value: "{{ .keycloakOidcUrl }}/token"
+              value: "{{ .hubOidcProviderUrl }}/token"
             - name: MCM_CLIENT_ID
               value: {{ .clientId | quote }}
             - name: MCM_CLIENT_SECRET
