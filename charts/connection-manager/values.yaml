@@ -82,8 +82,8 @@ api:
 
 ui:
   disabled: false
-  # checkSessionUrl:
-  # loginUrl:
+  checkSessionUrl: ''
+  loginUrl: ''
   image:
     name: ghcr.io/pm4ml/connection-manager-ui
     version: 1.7.0
