@@ -84,9 +84,10 @@ ui:
   disabled: false
   checkSessionUrl: ''
   loginUrl: ''
+  loginProvider: ''
   image:
     name: ghcr.io/pm4ml/connection-manager-ui
-    version: 1.7.0
+    version: 1.8.0
   ports:
     containerPort: 8080
     nodePort: 31627
