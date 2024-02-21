@@ -29,6 +29,8 @@ spec:
               value: {{ .Values.ui.loginUrl | quote }}
             - name: LOGIN_PROVIDER
               value: {{ .Values.ui.loginProvider | quote }}
+            - name: LOGOUT_URL
+              value: {{ .Values.ui.logoutUrl | quote }}
             {{- with .Values.ui.oauth }}
             - name: AUTH_ENABLED
               value: {{ .enabled | quote }}
