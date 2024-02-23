@@ -88,7 +88,7 @@ ui:
   logoutUrl: ''
   image:
     name: ghcr.io/pm4ml/connection-manager-ui
-    version: 1.8.1
+    version: 1.8.2
   ports:
     containerPort: 8080
     nodePort: 31627
