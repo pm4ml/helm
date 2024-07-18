@@ -109,6 +109,7 @@ db:
   host: localhost
   port: 3306
   schema: mcm
+  dfspSeed: ''
 
 ingress:
   enabled: true
