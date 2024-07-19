@@ -50,6 +50,8 @@ spec:
           value: {{ .Values.db.schema }}
         - name: DATABASE_PORT
           value: {{ .Values.db.port | quote }}
+        - name: DFSP_SEED
+          value: {{ .Values.db.dfspSeed | quote }}
       restartPolicy: OnFailure
   backoffLimit: 20
 {{- end}}
