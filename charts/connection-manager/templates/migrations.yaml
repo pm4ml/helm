@@ -21,6 +21,11 @@ spec:
         app.kubernetes.io/instance: {{ .Release.Name | quote }}
         helm.sh/chart: "{{ .Chart.Name }}-{{ .Chart.Version }}"
     spec:
+      {{- if .Values.api.serviceAccount.serviceAccountNameOverride }}
+      serviceAccountName: {{ .Values.api.serviceAccount.serviceAccountNameOverride }}
+      {{- else }}
+      serviceAccountName: {{ include "connection-manager.fullname" . }}-api
+      {{- end }}
       containers:
       - name: db-migration
           {{- with .Values.api }}
