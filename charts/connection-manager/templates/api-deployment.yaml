@@ -156,6 +156,8 @@ spec:
               value: {{ .Values.api.vault.mounts.dfspExternalIPWhitelistBundle | quote }}
             - name: SWITCH_FQDN
               value: {{ .Values.api.switchFQDN | quote }}
+            - name: SWITCH_ID
+              value: {{ .Values.api.switchId | quote }}
             - name: PRIVATE_KEY_LENGTH
               value: {{ .Values.api.vault.keyLength | quote }}
             - name: CERT_MANAGER_ENABLED

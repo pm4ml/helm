@@ -2,7 +2,7 @@ api:
   disabled: false
   image:
     name: ghcr.io/modusbox/connection-manager-api
-    version: v2.1.1
+    version: v2.1.2
   ports:
     containerPort: 3001
     nodePort: 31057
@@ -46,6 +46,7 @@ api:
       enabled: 0
       stringValue: this_is_a_default
   switchFQDN: switch.example.com
+  switchId: dummySwitchId
   certManager:
     enabled: false
     serverCertSecretName: dummy
