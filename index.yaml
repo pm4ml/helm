@@ -3,6 +3,25 @@ entries:
   connection-manager:
   - apiVersion: v2
     appVersion: 1.1.1
+    created: "2024-08-20T12:24:20.789530718Z"
+    description: Connection Manager Helm chart for Kubernetes
+    digest: 9fd2a5bb649a977aa7e88809d2d2ab82c05d35390c71c9c1999271ccc9089029
+    keywords:
+    - connection-manager
+    maintainers:
+    - email: ramiro@modusbox.com
+      name: Ramiro González Maciel
+    - email: ivan.annovazzi@modusbox.com
+      name: Ivan Annovazzi
+    name: connection-manager
+    sources:
+    - https://github.com/pm4ml/connection-manager-api
+    - https://github.com/pm4ml/connection-manager-ui
+    urls:
+    - https://github.com/pm4ml/helm/releases/download/connection-manager-1.2.4/connection-manager-1.2.4.tgz
+    version: 1.2.4
+  - apiVersion: v2
+    appVersion: 1.1.1
     created: "2024-08-15T13:19:00.964324867Z"
     description: Connection Manager Helm chart for Kubernetes
     digest: c51b993c4ca0bfae21f6d15a084e9decb5276e8f256bebb45bb2c71a9e403b16
