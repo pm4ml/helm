@@ -55,6 +55,8 @@ spec:
           value: {{ .Values.db.schema }}
         - name: DATABASE_PORT
           value: {{ .Values.db.port | quote }}
+        - name: SWITCH_ID
+          value: {{ .Values.api.switchId | quote }}
         - name: DFSP_SEED
           value: {{ .Values.db.dfspSeed | quote }}
         {{- if .Values.api.vault.auth.k8s.enabled }}
