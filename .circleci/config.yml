@@ -37,7 +37,7 @@ jobs:
           command: |
             GIT_SSH_COMMAND="ssh -o StrictHostKeyChecking=no" git clone "$CIRCLE_REPOSITORY_URL" -b gh-pages --single-branch gh-pages
       - run:
-          name: Add new chart to chart repo and publish
+          name: Add new chart to chart-repo and publish
           command: |
             cp -r .circleci gh-pages/
             cp -r new_chart/* gh-pages/
