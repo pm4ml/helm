@@ -20,9 +20,9 @@ jobs:
       - run:
           name: Install default dependencies
           command: apk --no-cache add git openssh
-      - run:
-          name: Initialise Helm client only
-          command: helm init --client-only --skip-refresh
+      # - run:
+      #     name: Initialise Helm client only
+      #     command: helm init --client-only --skip-refresh
       - add_ssh_keys:
           fingerprints:
             - "bd:aa:e9:a8:c6:32:0a:78:f5:fa:40:0b:52:2f:f7:1e"
@@ -66,3 +66,4 @@ workflows:
             branches:
               only:
                 - main
+                - chore/ci-helm
