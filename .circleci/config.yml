@@ -1,13 +1,17 @@
 version: 2
 
+defaults_Dependencies: &defaults_Dependencies
+  name: Install default dependencies
+  command: |
+    apk --no-cache add git openssh
+
 jobs:
   lint:
     docker:
       - image: alpine/helm:3.7.0
     steps:
       - run:
-          name: Install default dependencies
-          command: apk --no-cache add git openssh
+          <<: *defaults_Dependencies
       - checkout
       - run:
           name: Lint Chart
@@ -18,11 +22,7 @@ jobs:
       - image: alpine/helm:3.7.0
     steps:
       - run:
-          name: Install default dependencies
-          command: apk --no-cache add git openssh
-      - run:
-          name: Initialise Helm client only
-          command: helm init --client-only --skip-refresh
+          <<: *defaults_Dependencies
       - add_ssh_keys:
           fingerprints:
             - "bd:aa:e9:a8:c6:32:0a:78:f5:fa:40:0b:52:2f:f7:1e"
@@ -31,7 +31,7 @@ jobs:
           name: Build helm chart
           command: |
             mkdir new_chart
-            helm package connection-manager -d new_chart
+            helm package charts/connection-manager -d new_chart
       - run:
           name: Get current chart repo
           command: |
@@ -60,7 +60,6 @@ workflows:
                 - main
                 - chore/ci-helm
       - build_and_publish_chart:
-          # context: org-global
           requires:
             - lint
           filters:
