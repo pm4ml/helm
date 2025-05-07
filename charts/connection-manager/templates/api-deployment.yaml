@@ -35,6 +35,12 @@ spec:
           {{- end }}
           imagePullPolicy: {{ .Values.imagePullPolicy }}
           env:
+            {{- if .Values.api.env }}
+            {{- range $key, $val := .Values.api.env }}
+            - name: {{ $key }}
+              value: {{ $val | quote }}
+            {{- end }}
+            {{- end }}
             - name: DATABASE_HOST
               value: {{ .Values.db.host }}
             - name: DATABASE_USER
@@ -166,6 +172,8 @@ spec:
               value: {{ .Values.api.certManager.serverCertSecretName | quote }}
             - name: CERT_MANAGER_SERVER_CERT_SECRET_NAMESPACE
               value: {{ .Values.api.certManager.serverCertSecretNamespace | quote }}
+            - name: PING_PONG_SERVER_URL
+              value: {{ .Values.api.pingPongServerUrl | quote }}
           resources: {}
           volumeMounts:
           - name: {{ .Release.Name }}-secret-volume
