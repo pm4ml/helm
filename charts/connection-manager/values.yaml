@@ -6,6 +6,9 @@ api:
   ports:
     containerPort: 3001
     nodePort: 31057
+  # env:
+  #   key: values 
+  pingPongServerUrl: http://ml-participant-connection-test-svc:80
   oauth:
     enabled: "FALSE"
     issuer: https://localhost/oauth2/token
