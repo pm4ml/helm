@@ -50,7 +50,7 @@ spec:
         - /usr/local/bin/npm
         args:
         - run
-        - migrate-and-seed
+        - {{ default "migrate-and-seed" .Values.migrations.script }}
         env:
         - name: DATABASE_HOST
           value: {{ .Values.db.host }}

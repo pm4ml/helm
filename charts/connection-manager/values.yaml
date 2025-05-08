@@ -2,7 +2,7 @@ api:
   disabled: false
   image:
     name: docker.io/infitx/connection-manager-api
-    version: v2.9.2
+    version: v2.9.4
   ports:
     containerPort: 3001
     nodePort: 31057
@@ -107,6 +107,7 @@ ui:
 migrations:
   enabled: true
   deletePolicy: hook-succeeded
+  script: migrate-and-seed
 
 db:
   user: mcm
