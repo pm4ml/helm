@@ -1,8 +1,8 @@
 api:
   disabled: false
   image:
-    name: ghcr.io/modusbox/connection-manager-api
-    version: v2.1.2
+    name: docker.io/infitx/connection-manager-api
+    version: v2.9.2
   ports:
     containerPort: 3001
     nodePort: 31057
