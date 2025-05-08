@@ -31,10 +31,12 @@ spec:
         image: "{{ .image.name }}:{{ .image.version }}"
           {{- end }}
         command:
-        - /usr/local/bin/npm
+        - /bin/sh
         args:
-        - run
-        - migrate-and-seed
+        - -c
+        - |
+          until nslookup "$DATABASE_HOST"; do sleep 5; done;
+          exec /usr/local/bin/npm run migrate-and-seed
         env:
         - name: DATABASE_HOST
           value: {{ .Values.db.host }}
