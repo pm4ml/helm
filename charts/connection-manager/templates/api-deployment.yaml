@@ -33,7 +33,7 @@ spec:
           ports:
             - containerPort: {{ .ports.containerPort }}
             {{- if .ports.metricsServerPort }}
-            - http: {{ .ports.metricsServerPort }}
+            - containerPort: {{ .ports.metricsServerPort }}
             {{- end }}
           {{- end }}
           imagePullPolicy: {{ .Values.imagePullPolicy }}
