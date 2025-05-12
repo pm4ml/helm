@@ -14,6 +14,9 @@ spec:
       port: {{ .ports.containerPort }}
       targetPort: {{ .ports.containerPort }}
       nodePort: {{ .ports.nodePort }}
+    - name: http
+      port: {{ .ports.metricsServerPort }}
+      targetPort: {{ .ports.metricsServerPort }}
     {{- end }}
   selector:
     app.kubernetes.io/name: {{ include "connection-manager.fullname" . }}-api

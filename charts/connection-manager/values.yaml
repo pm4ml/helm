@@ -6,6 +6,7 @@ api:
   ports:
     containerPort: 3001
     nodePort: 31057
+    metricsServerPort: 9100
   # env:
   #   key: values 
   pingPongServerUrl: http://ml-participant-connection-test-svc:80

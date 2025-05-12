@@ -32,6 +32,9 @@ spec:
           image: "{{ .image.name }}:{{ .image.version }}"
           ports:
             - containerPort: {{ .ports.containerPort }}
+            {{- if .ports.metricsServerPort }}
+            - containerPort: {{ .ports.metricsServerPort }}
+            {{- end }}
           {{- end }}
           imagePullPolicy: {{ .Values.imagePullPolicy }}
           env:
@@ -172,6 +175,10 @@ spec:
               value: {{ .Values.api.certManager.serverCertSecretName | quote }}
             - name: CERT_MANAGER_SERVER_CERT_SECRET_NAMESPACE
               value: {{ .Values.api.certManager.serverCertSecretNamespace | quote }}
+            {{- if .Values.api.ports.metricsServerPort }}
+            - name: METRICS_SERVER_PORT
+              value: {{ .Values.api.ports.metricsServerPort | quote }}
+            {{- end }}
             - name: PING_PONG_SERVER_URL
               value: {{ .Values.api.pingPongServerUrl | quote }}
           resources: {}
@@ -199,5 +206,4 @@ spec:
               path: caCSRParameters.json
       hostname: connection-manager-api
       restartPolicy: Always
-status: {}
 {{- end -}}
