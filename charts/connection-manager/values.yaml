@@ -84,6 +84,8 @@ api:
   rbac:
     enabled: true
   annotations: {}
+  env: {}
+  envFrom: []
 
 ui:
   disabled: false
@@ -104,6 +106,8 @@ ui:
     clientSecret: changeme
 #    clientSecretName: changeme
 #    clientSecretKey: changeme
+  env: {}
+  envFrom: []
 
 migrations:
   enabled: true

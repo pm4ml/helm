@@ -38,12 +38,6 @@ spec:
           {{- end }}
           imagePullPolicy: {{ .Values.imagePullPolicy }}
           env:
-            {{- if .Values.api.env }}
-            {{- range $key, $val := .Values.api.env }}
-            - name: {{ $key }}
-              value: {{ $val | quote }}
-            {{- end }}
-            {{- end }}
             - name: DATABASE_HOST
               value: {{ .Values.db.host }}
             - name: DATABASE_USER
@@ -181,6 +175,20 @@ spec:
             {{- end }}
             - name: PING_PONG_SERVER_URL
               value: {{ .Values.api.pingPongServerUrl | quote }}
+            {{- if .Values.api.env }}
+            {{- range $key, $val := .Values.api.env }}
+            - name: {{ $key | quote }}
+              {{- if kindIs "map" $val }}
+              {{- toYaml $val | nindent 14 }}
+              {{- else }}
+              value: {{ $val | quote }}
+              {{- end }}
+            {{- end }}
+            {{- end }}
+          {{- if .Values.api.envFrom }}
+          envFrom:
+            {{- toYaml .Values.api.envFrom | nindent 12 }}
+          {{- end }}
           resources: {}
           volumeMounts:
           - name: {{ .Release.Name }}-secret-volume
