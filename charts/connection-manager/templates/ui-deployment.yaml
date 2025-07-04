@@ -50,6 +50,20 @@ spec:
               value: {{ .clientSecret }}
               {{- end }}
             {{- end }}
+            {{- if .Values.ui.env }}
+            {{- range $key, $val := .Values.ui.env }}
+            - name: {{ $key | quote }}
+              {{- if kindIs "map" $val }}
+              {{- toYaml $val | nindent 14 }}
+              {{- else }}
+              value: {{ $val | quote }}
+              {{- end }}
+            {{- end }}
+            {{- end }}
+          {{- if .Values.ui.envFrom }}
+          envFrom:
+            {{- toYaml .Values.ui.envFrom | nindent 12 }}
+          {{- end }}
           {{- with .Values.ui }}
           image: "{{ .image.name }}:{{ .image.version }}"
           ports:
