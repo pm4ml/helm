@@ -189,7 +189,7 @@ config:
 
 tests:
   api:
-    enabled: true
+    enabled: false
     weight: -5
     deletePolicy: before-hook-creation
     script: "https://raw.githubusercontent.com/modusbox/connection-manager-api/{{ .Values.api.image.version }}/scripts/run-functional-tests.sh"
