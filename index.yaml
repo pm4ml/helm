@@ -3,9 +3,9 @@ entries:
   connection-manager:
   - apiVersion: v2
     appVersion: 1.1.1
-    created: "2025-07-07T07:34:18.88318259Z"
+    created: "2025-07-07T07:39:05.211308852Z"
     description: Connection Manager Helm chart for Kubernetes
-    digest: 8e11913d1e979fa6fc50148d94b9d81cc06a319216a6bbe7f7f379bbb3e7caec
+    digest: 72aaf721d47edfdc109eb5c57a6de06e1f0740e3b233ae37d1d76105620febf9
     keywords:
     - connection-manager
     maintainers:
@@ -22,7 +22,7 @@ entries:
     version: 1.2.12
   - apiVersion: v2
     appVersion: 1.1.1
-    created: "2025-07-07T07:34:18.881377325Z"
+    created: "2025-07-07T07:39:05.209406689Z"
     description: Connection Manager Helm chart for Kubernetes
     digest: 6059e92d606bb2770ab5295082cb613ea0c056ff1d3985a48003386c0cc28616
     keywords:
@@ -41,7 +41,7 @@ entries:
     version: 1.2.11
   - apiVersion: v2
     appVersion: 1.1.1
-    created: "2025-07-07T07:34:18.880107557Z"
+    created: "2025-07-07T07:39:05.208179034Z"
     description: Connection Manager Helm chart for Kubernetes
     digest: a20fa6741c32f2ffc0410b83b140c811f2ee8cc859d89757e2797f3fea18b9ae
     keywords:
@@ -60,7 +60,7 @@ entries:
     version: 1.2.10
   - apiVersion: v2
     appVersion: 1.1.1
-    created: "2025-07-07T07:34:18.887727814Z"
+    created: "2025-07-07T07:39:05.2158817Z"
     description: Connection Manager Helm chart for Kubernetes
     digest: cf398dd2cbafa45f9f2949f01e79d407a2c2ad2d175b467066bf9ae96936f46b
     keywords:
@@ -79,7 +79,7 @@ entries:
     version: 1.2.9
   - apiVersion: v2
     appVersion: 1.1.1
-    created: "2025-07-07T07:34:18.886560563Z"
+    created: "2025-07-07T07:39:05.214767267Z"
     description: Connection Manager Helm chart for Kubernetes
     digest: 7a769763154593eb245fbb3f446f973f7292f4b8c3835aea42685617b90d4300
     keywords:
@@ -98,7 +98,7 @@ entries:
     version: 1.2.8
   - apiVersion: v2
     appVersion: 1.1.1
-    created: "2025-07-07T07:34:18.885480819Z"
+    created: "2025-07-07T07:39:05.213687186Z"
     description: Connection Manager Helm chart for Kubernetes
     digest: 15477fc39c016212bdc184f21e7705700e352782fb89e2d482df870ea58611fb
     keywords:
@@ -117,7 +117,7 @@ entries:
     version: 1.2.7
   - apiVersion: v2
     appVersion: 1.1.1
-    created: "2025-07-07T07:34:18.884393936Z"
+    created: "2025-07-07T07:39:05.212506825Z"
     description: Connection Manager Helm chart for Kubernetes
     digest: 2488fab3a0185be3657a09f143f82ae59c6d0da95b31b002895b7065f741035e
     keywords:
@@ -136,7 +136,7 @@ entries:
     version: 1.2.6
   - apiVersion: v1
     appVersion: 0.6.16
-    created: "2025-07-07T07:34:18.878145221Z"
+    created: "2025-07-07T07:39:05.20633362Z"
     description: Connection Manager Helm chart for Kubernetes
     digest: de21cf20e5d1e00d26ba576cc861133204c278a7642fb3f2cde25f2727b0db5f
     keywords:
@@ -155,7 +155,7 @@ entries:
     version: 0.4.10
   - apiVersion: v1
     appVersion: 0.6.16
-    created: "2025-07-07T07:34:18.878853715Z"
+    created: "2025-07-07T07:39:05.206992624Z"
     description: Connection Manager Helm chart for Kubernetes
     digest: 997883dcbbfa9f4e55e00ebbdd856a13c6a3796b80eda7e280e2cfcaccb5fcda
     keywords:
@@ -174,7 +174,7 @@ entries:
     version: 0.4.9
   - apiVersion: v1
     appVersion: 0.6.16
-    created: "2025-07-07T07:34:18.877504868Z"
+    created: "2025-07-07T07:39:05.205717707Z"
     description: Connection Manager Helm chart for Kubernetes
     digest: 4d663a922285a36a5a637c0cf987857d823f6645178065bbc43a2167dd45b9fc
     keywords:
@@ -193,7 +193,7 @@ entries:
     version: 0.4.0
   - apiVersion: v1
     appVersion: 0.6.16
-    created: "2025-07-07T07:34:18.876896841Z"
+    created: "2025-07-07T07:39:05.205157666Z"
     description: Connection Manager Helm chart for Kubernetes
     digest: 41c62804302ed0c451e768ac2a18e94b2d4f38db7298db3740cbf7fffbdc9353
     keywords:
@@ -210,4 +210,4 @@ entries:
     urls:
     - connection-manager-0.3.30.tgz
     version: 0.3.30
-generated: "2025-07-07T07:34:18.876133031Z"
+generated: "2025-07-07T07:39:05.204465566Z"
