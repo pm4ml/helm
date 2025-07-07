@@ -6,10 +6,6 @@ metadata:
   labels:
     app.kubernetes.io/component: test-api
 {{ include "connection-manager.labels" . | indent 4 }}
-  annotations:
-    helm.sh/hook: test
-    helm.sh/hook-weight: {{ .Values.tests.api.weight | quote }}
-    helm.sh/hook-delete-policy: {{ .Values.tests.api.deletePolicy }}
 spec:
   restartPolicy: Never
   containers:
