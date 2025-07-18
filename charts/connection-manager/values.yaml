@@ -2,7 +2,7 @@ api:
   disabled: false
   image:
     name: docker.io/infitx/connection-manager-api
-    version: v2.9.4
+    version: v2.14.0
   ports:
     containerPort: 3001
     nodePort: 31057
@@ -117,10 +117,19 @@ migrations:
 db:
   user: mcm
   password: changeme
+  # To use a secret for the password, set the following values
+  # passwordSecret: ''
+  # passwordSecretKey: ''
   host: localhost
   port: 3306
   schema: mcm
   dfspSeed: ''
+  ## SSL Configuration
+  sslEnabled: false
+  sslVerify: false
+  ### Configure this if you want to pass a CA certificate of the server.
+  # sslCaSecret: mysql-tls-client-creds
+  # sslCaSecretKey: cacert.pem
 
 ingress:
   enabled: true

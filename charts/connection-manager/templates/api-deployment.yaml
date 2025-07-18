@@ -52,6 +52,19 @@ spec:
             - name: DATABASE_PASSWORD
               value: {{ .Values.db.password }}
             {{- end }}
+            {{- if .Values.db.sslEnabled }}
+            - name: DATABASE_SSL_ENABLED
+              value: 'true'
+            - name: DATABASE_SSL_VERIFY
+              value: {{ .Values.db.sslVerify | quote}}
+            {{- if .Values.db.sslCaSecret }}
+            - name: DATABASE_SSL_CA
+              valueFrom:
+                secretKeyRef:
+                  name: {{ .Values.db.sslCaSecret }}
+                  key: {{ .Values.db.sslCaSecretKey }}
+            {{- end }}
+            {{- end }}
             - name: DATABASE_SCHEMA
               value: {{ .Values.db.schema }}
             - name: DATABASE_PORT
