@@ -7,7 +7,7 @@ metadata:
     app.kubernetes.io/component: api
 {{ include "connection-manager.labels" . | indent 4 }}
 spec:
-  replicas: 1
+  replicas: {{ .Values.api.replicaCount }}
   strategy: {}
   selector:
     matchLabels: &labels
