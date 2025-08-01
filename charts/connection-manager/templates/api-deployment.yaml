@@ -28,6 +28,8 @@ spec:
       {{- end }}
       containers:
         - name: connection-manager-api
+          securityContext:
+            readOnlyRootFilesystem: true
           {{- with .Values.api }}
           image: "{{ .image.name }}:{{ .image.version }}"
           ports:
