@@ -56,6 +56,8 @@ spec:
         - run
         - {{ default "migrate-and-seed" .Values.migrations.script }}
         env:
+        - name: NPM_CONFIG_UPDATE_NOTIFIER
+          value: 'false'
         - name: DATABASE_HOST
           value: {{ .Values.db.host }}
         - name: DATABASE_USER
