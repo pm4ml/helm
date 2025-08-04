@@ -59,6 +59,7 @@ workflows:
               only:
                 - main
                 - chore/ci-helm
+                - fix/rorfs
       - build_and_publish_chart:
           requires:
             - lint
@@ -67,3 +68,4 @@ workflows:
               only:
                 - main
                 - chore/ci-helm
+                - fix/rorfs

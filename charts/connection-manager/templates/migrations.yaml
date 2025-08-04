@@ -9,6 +9,7 @@ metadata:
     app.kubernetes.io/version: {{ .Chart.AppVersion }}
     helm.sh/chart: "{{.Chart.Name}}-{{.Chart.Version}}"
   annotations:
+    "helm.sh/hook": pre-install,pre-upgrade
     "helm.sh/hook-delete-policy": {{ .Values.migrations.deletePolicy }}
 spec:
   template:
@@ -27,6 +28,8 @@ spec:
       initContainers:
       - name: wait-for-db
         image: busybox:1.36
+        securityContext:
+          readOnlyRootFilesystem: true
         command:
         - /bin/sh
         - -c
@@ -42,6 +45,8 @@ spec:
           value: {{ .Values.db.host }}
       containers:
       - name: db-migration
+        securityContext:
+          readOnlyRootFilesystem: true
           {{- with .Values.api }}
         image: "{{ .image.name }}:{{ .image.version }}"
           {{- end }}
@@ -51,6 +56,8 @@ spec:
         - run
         - {{ default "migrate-and-seed" .Values.migrations.script }}
         env:
+        - name: NPM_CONFIG_UPDATE_NOTIFIER
+          value: 'false'
         - name: DATABASE_HOST
           value: {{ .Values.db.host }}
         - name: DATABASE_USER

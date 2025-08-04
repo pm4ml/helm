@@ -20,6 +20,8 @@ spec:
       containers:
         - name: connection-manager-ui
           imagePullPolicy: {{ .Values.imagePullPolicy }}
+          securityContext:
+            readOnlyRootFilesystem: true
           env:
             - name: API_BASE_URL
               value: {{ .Values.api.url | quote }}
